@@ -29,6 +29,9 @@ Telegram News Digest is an AI agent that periodically gathers the most recent po
    python main.py
    ```
 
+For a more in-depth walkthrough including environment setup, see
+[the setup guide](docs/setup_guide.md).
+
 ## Project Structure
 - `docs/design.md` – detailed design document describing architecture and implementation steps
 - `main.py` – entry point that runs the scheduled digest bot

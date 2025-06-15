@@ -18,7 +18,7 @@ Telegram News Digest is an AI agent that periodically gathers the most recent po
    pip install -r requirements.txt
    ```
 3. **Configure environment**
-   - Create a `.env` file with the following variables:
+   - Copy `.env.example` to `.env` and fill in your credentials:
      - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` – credentials for a Telegram application
      - `BOT_TOKEN` – your bot token
      - `TARGET_USER_ID` – user ID to receive digests

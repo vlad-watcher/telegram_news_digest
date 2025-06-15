@@ -1,3 +1,5 @@
+"""Utilities for summarizing lists of messages."""
+
 import os
 import logging
 from typing import List
@@ -11,7 +13,14 @@ logger = logging.getLogger(__name__)
 
 
 def summarize_texts(texts: List[str]) -> str:
-    """Summarize a list of texts into one digest."""
+    """Return a single summary from multiple message strings.
+
+    Args:
+        texts: Sequence of message texts to summarize.
+
+    Returns:
+        A concise string containing the summary.
+    """
     if not texts:
         return ""
     api_key = os.getenv("OPENAI_API_KEY")

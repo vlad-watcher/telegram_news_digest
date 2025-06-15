@@ -18,8 +18,12 @@ Telegram News Digest is an AI agent that periodically gathers the most recent po
    pip install -r requirements.txt
    ```
 3. **Configure environment**
-   - Create a `.env` file with your Telegram bot token, target channels, and user ID.
-   - Optional: add API keys for your preferred LLM provider if using external summarization services.
+   - Create a `.env` file with the following variables:
+     - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` – credentials for a Telegram application
+     - `BOT_TOKEN` – your bot token
+     - `TARGET_USER_ID` – user ID to receive digests
+     - `CHANNELS` – comma-separated list of channel usernames
+     - Optional: `OPENAI_API_KEY` for LLM-based summarization
 4. **Run the bot**
    ```bash
    python main.py
@@ -27,7 +31,7 @@ Telegram News Digest is an AI agent that periodically gathers the most recent po
 
 ## Project Structure
 - `docs/design.md` – detailed design document describing architecture and implementation steps
-- `main.py` – entry point (to be implemented)
+- `main.py` – entry point that runs the scheduled digest bot
 - `requirements.txt` – Python dependencies
 
 ## Contributing

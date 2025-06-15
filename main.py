@@ -1,3 +1,5 @@
+"""Entry point for the scheduled Telegram digest bot."""
+
 import asyncio
 import logging
 import os
@@ -16,16 +18,22 @@ load_dotenv()
 
 
 def get_env_list(name: str) -> List[str]:
+    """Return a list from a comma-separated environment variable."""
+
     value = os.getenv(name, "")
     return [v.strip() for v in value.split(",") if v.strip()]
 
 
-def run_job(bot: DigestBot):
+def run_job(bot: DigestBot) -> None:
+    """Invoke a digest cycle for the given bot."""
+
     logger.info("Running digest cycle at %s", datetime.utcnow())
     asyncio.run(bot.run_cycle())
 
 
-def main():
+def main() -> None:
+    """Load configuration and start the digest scheduler."""
+
     api_id = int(os.getenv("TELEGRAM_API_ID"))
     api_hash = os.getenv("TELEGRAM_API_HASH")
     bot_token = os.getenv("BOT_TOKEN")

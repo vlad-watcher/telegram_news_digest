@@ -47,14 +47,17 @@ class DigestBot:
             for channel in self.channels:
                 last_id = self.state.get(channel, 0)
                 fetched = []
+                highest_id = last_id
                 async for msg in self.client.iter_messages(channel, limit=20):
                     if isinstance(msg, Message) and msg.id > last_id:
                         if msg.message:
                             fetched.append(msg.message)
+                        if msg.id > highest_id:
+                            highest_id = msg.id
                     if len(fetched) >= 20:
                         break
                 if fetched:
-                    self.state[channel] = max(self.state.get(channel, 0), msg.id)
+                    self.state[channel] = highest_id
                     messages[channel] = list(reversed(fetched))
         self._save_state()
         return messages

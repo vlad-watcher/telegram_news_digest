@@ -38,5 +38,5 @@ Telegram News Digest is an AI agent that periodically gathers the most recent po
 Contributions are welcome! Please open issues or submit pull requests to suggest features or fixes.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
 

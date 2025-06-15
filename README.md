@@ -29,6 +29,16 @@ Telegram News Digest is an AI agent that periodically gathers the most recent po
    python main.py
    ```
 
+### Running with Docker
+
+Alternatively you can run the bot inside a container. Build the image and pass
+your `.env` file when starting the container:
+
+```bash
+docker build -t telegram-digest .
+docker run --env-file .env telegram-digest
+```
+
 For a more in-depth walkthrough including environment setup, see
 [the setup guide](docs/setup_guide.md).
 

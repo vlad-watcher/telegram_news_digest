@@ -34,6 +34,10 @@ pip install -r requirements.txt
    - `TARGET_USER_ID` – your Telegram numeric ID (use `@userinfobot` to obtain it)
    - `CHANNELS` – comma-separated list of channel usernames or IDs to monitor
    - `OPENAI_API_KEY` (optional) for LLM-powered summaries
+   - `OPENAI_MODEL` (optional, default `gpt-4o`)
+   - `SUMMARY_TEMPERATURE` (optional, default `0.2`)
+   - `SUMMARY_MAX_OUTPUT_TOKENS` (optional, default `1000`)
+   - `SUMMARY_MAX_INPUT_TOKENS` (optional, default `5000`)
 
 ## 5. Run the Bot
 Execute the main script to start the scheduler:

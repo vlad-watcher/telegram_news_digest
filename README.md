@@ -23,7 +23,12 @@ Telegram News Digest is an AI agent that periodically gathers the most recent po
      - `BOT_TOKEN` – your bot token
      - `TARGET_USER_ID` – user ID to receive digests
      - `CHANNELS` – comma-separated list of channel usernames
-     - Optional: `OPENAI_API_KEY` for LLM-based summarization
+    - Optional summarization settings:
+      - `OPENAI_API_KEY` – required for OpenAI-based summaries
+      - `OPENAI_MODEL` – model name (default `gpt-4o`)
+      - `SUMMARY_TEMPERATURE` – sampling temperature (default `0.2`)
+      - `SUMMARY_MAX_OUTPUT_TOKENS` – maximum summary tokens (default `1000`)
+      - `SUMMARY_MAX_INPUT_TOKENS` – maximum input tokens considered (default `5000`)
 4. **Run the bot**
    ```bash
    python main.py

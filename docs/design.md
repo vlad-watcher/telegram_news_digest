@@ -1,11 +1,11 @@
 # Telegram News Digest Design Document
 
 ## Objective
-Create an AI-driven Telegram agent that periodically retrieves the latest 20 posts from each Telegram channel in a predefined list, summarizes the gathered posts, and delivers a concise digest to a specified user via a private message.
+Create an AI-driven Telegram agent that periodically retrieves the latest posts from each Telegram channel in a predefined list (by default the most recent 10), summarizes the gathered posts, and delivers a concise digest to a specified user via a private message.
 
 ## High-Level Overview
 1. **Data Collection**
-   - Use the Telegram API to fetch the most recent 20 posts from each channel.
+   - Use the Telegram API to fetch the most recent posts from each channel. The maximum number of posts per channel is controlled via the `CHANNEL_FETCH_LIMIT` environment variable (default 10).
    - Schedule periodic polling (e.g., hourly) using a task scheduler.
 
 2. **Summarization**

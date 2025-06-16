@@ -33,6 +33,7 @@ pip install -r requirements.txt
    - `BOT_TOKEN` for your bot
    - `TARGET_USER_ID` – your Telegram numeric ID (use `@userinfobot` to obtain it)
    - `CHANNELS` – comma-separated list of channel usernames or IDs to monitor
+   - `CHANNEL_FETCH_LIMIT` (optional, default `10`) – number of posts retrieved from each channel
    - `OPENAI_API_KEY` (optional) for LLM-powered summaries
    - `OPENAI_MODEL` (optional, default `gpt-4o`)
    - `SUMMARY_TEMPERATURE` (optional, default `0.2`)

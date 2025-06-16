@@ -14,6 +14,9 @@ from summarizer import summarize_texts
 
 logger = logging.getLogger(__name__)
 
+# Maximum number of posts fetched per channel, configurable via environment.
+POST_LIMIT = int(os.getenv("CHANNEL_FETCH_LIMIT", "10"))
+
 
 class DigestBot:
     """Fetches posts from Telegram channels and sends a summarized digest."""
@@ -75,13 +78,13 @@ class DigestBot:
                 last_id = self.state.get(channel, 0)
                 fetched = []
                 highest_id = last_id
-                async for msg in self.client.iter_messages(channel, limit=20):
+                async for msg in self.client.iter_messages(channel, limit=POST_LIMIT):
                     if isinstance(msg, Message) and msg.id > last_id:
                         if msg.message:
                             fetched.append(msg.message)
                         if msg.id > highest_id:
                             highest_id = msg.id
-                    if len(fetched) >= 20:
+                    if len(fetched) >= POST_LIMIT:
                         break
                 if fetched:
                     self.state[channel] = highest_id

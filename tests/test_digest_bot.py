@@ -37,7 +37,7 @@ class DummyClient:
     async def __aexit__(self, exc_type, exc, tb):
         pass
 
-    def iter_messages(self, channel, limit=20):
+    def iter_messages(self, channel, limit=10):
         async def gen():
             for msg in self.messages.get(channel, []):
                 yield msg

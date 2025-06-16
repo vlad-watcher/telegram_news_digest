@@ -3,7 +3,7 @@
 Telegram News Digest is an AI agent that periodically gathers the most recent posts from a list of Telegram channels, summarizes them, and sends you a single private message containing the key information.
 
 ## Features
-- Fetches the latest 20 posts from each configured channel
+- Fetches the latest posts from each configured channel (default 10, configurable via `CHANNEL_FETCH_LIMIT`)
 - Summarizes posts into one concise digest
 - Sends the digest to a target Telegram user via bot DM
 - Easily configurable list of channels and schedule
@@ -22,7 +22,8 @@ Telegram News Digest is an AI agent that periodically gathers the most recent po
      - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` – credentials for a Telegram application
      - `BOT_TOKEN` – your bot token
      - `TARGET_USER_ID` – user ID to receive digests
-     - `CHANNELS` – comma-separated list of channel usernames
+    - `CHANNELS` – comma-separated list of channel usernames
+    - `CHANNEL_FETCH_LIMIT` (optional, default `10`) – number of posts retrieved per channel
     - Optional summarization settings:
       - `OPENAI_API_KEY` – required for OpenAI-based summaries
       - `OPENAI_MODEL` – model name (default `gpt-4o`)
